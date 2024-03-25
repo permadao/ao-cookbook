@@ -1,47 +1,40 @@
-# CRED Utils Blueprint
+# CRED Utils 蓝图
 
-The CRED Utils Blueprint is a predesigned template that helps you quickly check your CRED balance in `ao` testnet.
+CRED Utils 蓝图是一个预先设计的模板，可帮助你快速的在`ao`测试网中查看你的 CRED 余额。
 
-## Unpacking the CRED Utils Blueprint
+## 解密 CRED 工具蓝图
 
-### The `CRED` Metatable
+### `CRED` 信息表
 
-- **CRED.balance**: Evaluating `CRED.balance` will print your process's last known balance of your CRED.
-  If you have never fetched your CRED balance before, it will be fetched automatically.
-  If you think your CRED has recently changed, consider running `CRED.update` first.
+- **CRED.balance**: 运行 `CRED.balance` 会显示您进程已知的最新 CRED 余额。如果您之前从未查询过余额，它将自动获取。如果你认为你的CRED最近发生变动，建议先运行`CRED.update`更新余额。
 
-- **CRED.process**: Evaluating `CRED.process` will print the process id of the CRED token issuer.
+- **CRED.process**: 运行此命令会打印发行CRED代币的进程ID。
 
-- **CRED.send**: Invoking `CRED.send(targetProcessId, amount)` like a function will transfer CRED from your `ao` process
-  to another `ao` process.
+- **CRED.send**: 就像调用函数一样使用 `CRED.send(targetProcessId, amount)` 可以将 CRED 从您的 ao 进程发送到另一个 ao 进程。
 
-  - `targetProcessId`: **string**: the 43-character process id of the recipient.
-  - `amount`: **integer**: The quantity of CRED units to send. 1 CRED === 1000 CRED units.
+  - `targetProcessId`: **string**: 接收方的43位字符的进程 ID。
+  - `amount`: **integer**: 要发送的 CRED 单位数量。1 CRED等于1000份CRED。
 
-- **CRED.update**: Evaluating `CRED.update` will fetch your latest CRED balance by sending a message to the CRED
-  issuer process. The `UpdateCredBalance` handler (see below) will ingest the response message.
+- **CRED.update**: 运行`CRED.update`命令会向 CRED 发行方的进程发送消息，从而获取您最新的 CRED 余额。更新后的余额将由下文提到的 `UpdateCredBalance` 处理程序接收处理。
 
-### Handler Definitions
+### Handler 定义
 
-- **Credit Handler**: The `CRED_Credit` handler allows the CRED issuer process (and `aos`) to automatically notify you when your
-  CRED balance increase.
+- **Credit Handler**: `CRED_Credit` handler支持 CRED 发行方进程（以及aos）在你的 CRED 余额增加时自动通知你。
 
-- **Debit Handler**: The `CRED_Debit` handler allows the CRED issuer process (and `aos`) to automatically notify you when your
-  CRED balance decreases.
+- **Debit Handler**: `CRED_Debit` Handler支持 CRED 发行方进程（以及aos）在你的 CRED 余额减少时自动通知你。
 
-- **Update Balance Handler**: The `UpdateCredBalance` handler ingests the response to any `CRED.update` requests.
+- **Update Balance Handler**: `UpdateCredBalance` handler 接收所有 CRED.update 请求的响应。
 
-## How To Use the Blueprint
+## 如何使用蓝图
 
-1. Open the Terminal.
-2. Start your `aos` process.
-3. Type in `.load-blueprint credUtils`
-4. Type in `CRED.balance`
+1. 打开终端。
+2. 启动你的`aos` 进程。
+3. 输入 `.load-blueprint credUtils`。
+4. 输入 `CRED.balance`
 
-## What's in the CRED Utils Blueprint:
+## CRED 工具蓝图中包含的内容：
 
-See the `aos` [source code on GitHub](https://github.com/permaweb/aos/blob/main/blueprints/credUtils.lua)
-for the blueprint shipped in the latest version of `aos`.
+有关 `aos` 最新版本中提供的蓝图，请参阅 github 上`aos` [source code on GitHub](https://github.com/permaweb/aos/blob/main/blueprints/credUtils.lua)的源代码。
 
 ```lua
 CRED_PROCESS = "Sa0iBLPNyJQrwpTTG-tWLQU-1QeUAJA73DdxGGiKoJc"

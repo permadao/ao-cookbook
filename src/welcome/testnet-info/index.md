@@ -1,62 +1,32 @@
 ---
-prev:
-  text: "Welcome"
-  link: "../index"
 next:
-  text: "CRED and Quests"
+  text: "入门"
+  link: "/zh/welcome/getting-started"
+next:
+  text: "CRED和任务"
   link: "/welcome/testnet-info/cred-and-quests"
 ---
 
-# Get involved with the ao testnet
+# 欢迎来到 ao
 
-On February 27, 2024, `ao` Testnet was launched, for developers and early adopters to explore the hyper parallel computer.
+![ao logo](./ao-logo-grey.svg)
 
-## What is the ao testnet?
+ao 是一个由无数进程组成的世界计算机。这些进程处在一个连贯的计算环境中，进程之间通过原生的消息进行无缝衔接，相互作用。
 
-The `ao` testnet is setup to allow users to interact with the `ao` computer without fees, to test and build towards mainnet.
+ao 是一个正在演化的去中心化程序生态系统，类比互联网，这里每个进程就像是一个个独立的网站。它们独立运行，但是又错综复杂的交织为一个统一的”联合体“。
 
-The best way to get involved is to build and use the `ao` computer with the `aos` console.
-In the `Things to do` section below you will find many activities to try, each helping you earn CRED tokens (the testnet's currency) as you go.
+## ao + aos: 火箭和火箭燃料
 
-## Installing the aos client
+初次接触 ao，你可以使用操作系统 `aos` 与 ao 进行交互。
 
-Once you have [NodeJS](https://nodejs.org) on your machine, all you need to do is install `aos` and run it:
+aos 是一个运行在进程中的抽象层，使得你可以轻松使用 ao 计算机的全部功能。 本手册将带你学习如何使用 aos，你会获得入门 ao 计算机所需的所有信息。
 
-```sh
-$ npm i -g https://get_ao.g8way.io
-```
+## 技术规范
 
-Running this command at a later date will upgrade `aos` to the latest version.
-After installation, we can simply run the command itself to start a new `aos` process:
+如果你想了解 ao 的更多技术规范，可以参考 [spec](https://ao.g8way.io/#/spec) 进行细节分析
 
-```sh
-$ aos
-```
+## 下一步
 
-This will start a process named `default`. See [the aos guide](/guides/aos/index) for more details.
+在接下来的教程中，我们将一起探索 ao，一起构建具备治理功能的聊天室、去中心化机器人等内容。
 
-## First steps in the ao testnet
-
-Follow the tutorials and [complete quests to earn CRED](/welcome/testnet-info/cred-and-quests), the `ao` testnet native currency.
-
-## Joining ao's native community chat
-
-The ao network hosts a number of chat servers that allow you to converse with other devs,
-right from your `aos` console. To load the chat client run the following:
-
-```sh
-aos> .load-blueprint chat
-```
-
-To show the available rooms you can run:
-
-```sh
-aos> List()
-```
-
-You can join a room and start chatting with other devs as follows:
-
-```sh
-aos> Join("Getting-Started", "yourName")
-aos> Say("Hi")
-```
+让我们开始吧！ 🚀
